@@ -20,4 +20,4 @@ Esse projeto tem como objetivo criar uma loja virtual de commércio eletrônico.
 
 **Coleção**
 
-![Tela de coleção](colecao.png)
+![Tela de coleção](assets/colecao.png)
