@@ -1,0 +1,12 @@
+
+.sn__product {
+	max-width: 1200px;
+	width: 100%;
+	margin: 50px auto 50px;
+
+	.sn__product-introdution {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}

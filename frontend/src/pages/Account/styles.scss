@@ -1,0 +1,65 @@
+.sn__account {
+	margin-bottom: 50px;
+
+	.sn__account-wrapper {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0px auto;
+
+		&.sn__account-wrapper-no-login {
+			max-width: 420px;
+
+			.sn__account-info {
+				margin: 20px 0px 40px;
+				font-size: 16px;
+				text-align: center;
+			}
+	
+			.sn__account-container-links {
+				text-align: center;
+	
+				.sn__account-link {
+					height: 45px;
+					background-color: #ff7d1a;
+					border-radius: 30px;
+					display: inline-block;
+					width: 100%;
+					max-width: 150px;
+					margin: 0px 10px;
+		
+					color: #ffffff;
+					font-size: 16px;
+					text-align: center;
+					line-height: 45px;
+					box-shadow: 0 2px 2px 1px rgba(255, 255, 255, 0.2);
+		
+					transition: 0.2s ease-in;
+		
+					&:hover {
+						opacity: 0.9;
+						transform: scale(0.98);
+					}
+				}
+			}
+		}
+
+		.sn__account-title {
+			font-size: 30px;
+			font-weight: 400;
+			text-align: center;
+			margin: 40px 0px 0px;
+		}
+
+		.sn__account-loading,
+		.sn__account-thankyou {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		
+
+	}
+}
+
+
+				

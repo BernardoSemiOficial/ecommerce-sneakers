@@ -1,0 +1,121 @@
+.sn__account-login {
+	margin-bottom: 50px;
+
+	.sn__account-login-wrapper {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0px auto;
+
+		.sn__account-login-title {
+			font-size: 30px;
+			font-weight: 400;
+			text-align: center;
+			margin: 40px 0px 0px;
+		}
+
+		.sn__account-login-form {
+			width: 100%;
+			max-width: 340px;
+			text-align: center;
+			margin: 0 auto;
+
+			.field {
+				text-align: left;
+				margin-bottom: 12px;
+
+				label {
+					display: block;
+					font-size: 14px;
+					color: #323232;
+					margin-bottom: 4px;
+
+					&::before {
+						content: "*";
+						color: red;
+						position: relative;
+						margin-right: 2px;
+					}
+				}
+
+				input[type="text"],
+				input[type="email"],
+				input[type="password"],
+				input[type="number"],
+				input[type="date"] {
+					border-radius: 30px;
+					padding: 8px 20px;
+					border: 1px solid #FF7D1A;
+					display: block;
+					width: 100%;
+
+					font-size: 16px;
+					line-height: 1.0;
+					background-color: #ffffff;
+
+					transition: 0.2s ease-in;
+					overflow: hidden;
+					outline: 0;
+
+					&:focus {
+						box-shadow: 2px 2px 0px 2px #323232;
+						border: 1px solid #323232;
+					}
+
+					&::placeholder {
+						color: #555555;
+					}
+				}
+				
+				select {
+					border-radius: 30px;
+					padding: 8px 20px;
+					border: 1px solid #FF7D1A;
+					display: block;
+					width: 100%;
+
+					font-size: 16px;
+					line-height: 1.0;
+					background-color: #ffffff;
+
+					transition: 0.2s ease-in;
+					overflow: hidden;
+					outline: 0;
+
+					&:focus {
+						box-shadow: 2px 2px 0px 2px #323232;
+						border: 1px solid #323232;
+					}
+				}
+
+				button[type="submit"] {
+					background-color: #323232;
+					height: 45px;
+					width: 100%;
+					margin-top: 10px;
+					border-radius: 30px;
+					
+					font-size: 18px;
+					color: #ffffff;
+
+					transition: 0.2s ease-in;
+
+					&:hover {
+						filter: brightness(0.8);
+					}
+				}
+
+				.field-error-feedback {
+					display: block;
+					color: #cb1818;
+					padding: 5px 5px 5px;
+					margin-bottom: 5px;
+					font-size: 14px;
+				}
+			}
+
+		}
+	}
+}
+
+
+				

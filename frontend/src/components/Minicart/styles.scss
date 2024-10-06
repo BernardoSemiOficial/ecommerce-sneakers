@@ -1,0 +1,150 @@
+
+.sn__minicart-container {
+	position: fixed;
+	top: 0px;
+	right: -100%;
+	bottom: 0px;
+	height: 100%;
+	width: 100%;
+	max-width: 440px;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+	border-radius: 30px 0px 0px 30px;
+	z-index: 10;
+	transition: 0.4s ease;
+
+	&.active {
+		right: 0px;
+	}
+
+	.sn__minicart-wrapper {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	
+		.sn__minicart-header {
+			padding: 20px 15px;
+			border-bottom: 1px solid #323232;
+			position: relative;
+
+			h2 {
+				font-size: 20px;
+				text-align: center;				
+			}
+
+			button.close {
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				transform: translateY(-50%);
+				font-size: 20px;
+				background-color: #ff7d1a;
+				width: 30px;
+				height: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 30px;
+				color: #ffffff;
+				box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+			}
+		}
+		
+		.sn__minicart-items {
+			flex-grow: 1;
+
+			.sn__minicart-items-product {
+				display: flex;
+				align-items: center;
+				padding: 10px 15px;
+
+				&.cart-is-empty {
+					text-align: center;
+					height: 100%;
+					justify-content: center;
+				}
+
+				.sn__minicart-items-product-image {
+					margin-right: 15px;
+
+					img {
+						width: 100%;
+						max-width: 100px;
+						display: inline-block;
+						border-radius: 15px;
+					}
+				}
+
+				.sn__minicart-items-product-info {
+					line-height: 1.0;
+
+					.title {
+						font-size: 25px;
+
+					}
+
+					.quantity {
+						font-size: 14px;
+						color: #323232;
+						margin-bottom: 5px;
+					}
+
+					.price {
+						font-size: 14px;
+						color: #323232;
+						margin-bottom: 5px;
+					}
+
+				}
+
+				.sn__minicart-items-product-delete {
+					margin-left: auto;
+					margin-right: 10px;
+
+					button {
+						width: 30px;
+						height: 30px;
+						display: inline-block;
+						border-radius: 30px;
+						background-color: #ffffff;
+						box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+						font-size: 0px;
+
+						transition: background-color 0.2s ease-in;
+
+						&:hover {
+							background-color: rgb(165, 0, 0);
+
+							svg > use {
+								fill: #ffffff;
+							}
+						}
+					}
+				}
+			}
+		
+		}
+		
+		
+		.sn__minicart-footer {
+			padding: 20px 15px;
+			border-top: 1px solid #323232;
+			
+			button {
+				display: block;
+				background-color: #ff7d1a;
+				border-radius: 30px;
+				height: 40px;
+				width: 100%;
+
+				font-size: 16px;
+				color: #ffffff;
+
+			}
+		}
+
+	}
+	
+}
+

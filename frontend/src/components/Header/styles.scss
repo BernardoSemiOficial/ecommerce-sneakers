@@ -1,0 +1,148 @@
+
+.sn__header {
+	padding: 30px 32px;
+	width: 100%;
+	height: auto;
+	box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.1);
+
+	.sn__header-container {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.sn__header-content {
+		display: flex;
+		align-items: center;
+
+		&:first-child {
+			justify-content: flex-start;
+		}
+		
+		&:last-child {
+			justify-content: flex-end;
+		}
+	
+		.sn__header-logo {
+			display: inline-block;
+			margin: 0px 20px 0px 0px;
+
+			img {
+				width: 100%;
+				max-width: 138px;
+				height: auto;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		
+		.sn__header-nav {
+			
+			ul {
+				display: flex;
+				align-items: center;
+
+				li {
+					list-style: none;
+					margin: 0 10px;
+
+					a {
+						display: inline-block;
+						font-size: 16px;
+						color: #68707d;
+						vertical-align: middle;
+						transition: 0.2s ease;
+					}
+
+					&:hover {
+						a {
+							color: #525861;
+						}
+					}
+				}
+			}
+		}
+		
+		.sn__header-cart {
+			position: relative;
+
+			img {
+				vertical-align: middle;
+			}
+			
+			.sn__header-cart-quantity {
+				position: absolute;
+				top: -5px;
+				right: 2px;
+
+				background-color: #FF7D1A;
+				color: #ffffff;
+				font-size: 12px;
+				border-radius: 50%;
+				width: 15px;
+				height: 15px;
+				line-height: 13px;
+			}
+		}
+		
+		.sn__header-user {
+			// font-size: 0px;
+			margin-left: 20px;
+			position: relative;
+
+			img {
+				display: inline-block;
+				width: 100%;
+				max-width: 40px;
+				height: 40px;
+				border-radius: 50%;
+
+				box-shadow: 0px 0px 0px 2px #ffffff,
+							0px 0px 0px 4px #FF7D1A;
+			}
+
+			&:hover {
+
+				.sn__header-user-nav {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			.sn__header-user-nav {
+				background-color: #FF7D1A;
+				border-radius: 5px;
+				padding: 8px;
+				position: absolute;
+				top: 45px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				width: 150px;
+				height: auto;
+				transition: 0.2s ease;
+				opacity: 0;
+				visibility: hidden;
+				z-index: 10;
+
+				ul {
+					list-style: none;
+
+					li {
+						margin-bottom: 5px;
+					}
+
+					a {
+						color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+	
+}
+

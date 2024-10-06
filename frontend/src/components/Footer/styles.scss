@@ -1,0 +1,21 @@
+
+.sn__footer {
+	margin-top: 0px;
+	padding: 30px 32px;
+	width: 100%;
+	height: auto;
+	box-shadow: 0 -2px 2px 0px rgba(0, 0, 0, 0.1);
+
+	.sn__footer-container {
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+	}
+	
+}
+
