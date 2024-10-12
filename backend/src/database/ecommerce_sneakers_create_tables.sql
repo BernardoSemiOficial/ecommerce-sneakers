@@ -17,10 +17,10 @@ CREATE TABLE TB_CUSTOMER (
     id_customer SERIAL NOT NULL,
     cpf VARCHAR(11) NOT NULL,
     email VARCHAR(60) NOT NULL,
-	password VARCHAR(60) NOT NULL,
+		password VARCHAR(60) NOT NULL,
     first_name VARCHAR(60) NOT NULL,
     last_name VARCHAR(60) NOT NULL,
-    date_birth DATE NOT NULL,
+    age INT NOT NULL,
 	
     CONSTRAINT TB_CUSTOMER_UNIQUE_CPF UNIQUE (cpf),
     CONSTRAINT TB_CUSTOMER_UNIQUE_EMAIL UNIQUE (email),
@@ -71,10 +71,10 @@ CREATE TABLE TB_ORDER (
     date_order TIMESTAMPTZ NOT NULL,
     qtda_products INT NOT NULL,
     total_order DECIMAL(9,2) NOT NULL,
-    id_transaction TEXT NOT NULL,
+    id_customer INT NOT NULL,
+    id_transaction VARCHAR(255) NOT NULL,
     status_payment VARCHAR(30) NOT NULL,
     method_payment VARCHAR(30) NOT NULL,
-    id_customer INT NOT NULL,
 	
     CONSTRAINT TB_ORDER_PK PRIMARY KEY (id_order)
 );

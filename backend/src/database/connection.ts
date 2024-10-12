@@ -1,20 +1,18 @@
-import { Pool } from 'pg';
-const postgresUrlDatabaseLocal = process.env.DATABASE_URL_LOCALHOST;
+import { Pool } from "pg";
 
 interface ConnectionContructor {
-	connectionString: string | "local"
-	max?: number
+	connectionString: string | "local";
+	max?: number;
 	ssl?: {
-		rejectUnauthorized?: boolean
-	}
+		rejectUnauthorized?: boolean;
+	};
 }
 
 class Connection {
-
-	#db: Pool = null
+	#db: Pool = null;
 
 	constructor(configDatabase: ConnectionContructor) {
-		if(!configDatabase) {
+		if (!configDatabase) {
 			throw new Error("Configurações do banco de dados não informadas");
 		}
 
@@ -22,11 +20,14 @@ class Connection {
 		configDatabase.ssl = {};
 		configDatabase.ssl.rejectUnauthorized = false;
 
-		if(configDatabase.connectionString === "local") {
+		if (configDatabase.connectionString === "local") {
 			this.#db = new Pool({
 				...configDatabase,
-				connectionString: postgresUrlDatabaseLocal
-			})
+				database: "eccomerce_sneakers",
+				port: 5432,
+				password: "postgres",
+				user: "postgres",
+			});
 			return;
 		}
 
@@ -34,35 +35,33 @@ class Connection {
 	}
 
 	async create() {
-        try {
-			await this.#db.connect();
-        } catch (error) {
-            console.log(error);
-        }
-    }
-	
-    async close() {
 		try {
-			await this.#db.end();	
+			await this.#db.connect();
 		} catch (error) {
 			console.log(error);
 		}
-    }
+	}
 
-    async query(sql: string, values = []) {
+	async close() {
+		try {
+			await this.#db.end();
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	async query(sql: string, values = []) {
 		try {
 			const response = await this.#db.query(sql, values);
 			return response;
 		} catch (error) {
 			console.log(error);
 		}
-    }
+	}
 
 	get database() {
 		return this.#db;
 	}
 }
 
-export {
-    Connection
-};
+export { Connection };
