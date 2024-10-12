@@ -16,22 +16,22 @@ class Connection {
 			throw new Error("Configurações do banco de dados não informadas");
 		}
 
-		configDatabase.max = 15;
-		configDatabase.ssl = {};
-		configDatabase.ssl.rejectUnauthorized = false;
-
 		if (configDatabase.connectionString === "local") {
+			console.log("local");
 			this.#db = new Pool({
-				...configDatabase,
-				database: "eccomerce_sneakers",
+				max: 15,
+				ssl: {
+					rejectUnauthorized: false,
+				},
+				host: "localhost",
+				database: "ecommerce_sneakers",
 				port: 5432,
 				password: "postgres",
 				user: "postgres",
 			});
-			return;
+		} else {
+			this.#db = new Pool(configDatabase);
 		}
-
-		this.#db = new Pool(configDatabase);
 	}
 
 	async create() {
