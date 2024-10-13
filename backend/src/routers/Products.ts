@@ -5,4 +5,4 @@ routerProducts.get("/products", Products.getProducts);
 routerProducts.post("/products", Products.postProduct);
 routerProducts.patch("/products", Products.updateProduct);
 routerProducts.delete("/products/:id", Products.deleteProduct);
-export { routerProducts }
+export { routerProducts };
