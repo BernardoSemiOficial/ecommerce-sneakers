@@ -11,6 +11,7 @@ const mercadoPago = new window.MercadoPago(
 export function ProviderCheckout({ children }) {
 	const { productsInCart } = useContext(ContextMinicart);
 
+	const [loadingCheckout, setLoadingCheckout] = useState(false);
 	const [totalProducts, setTotalProducts] = useState(0);
 	const [totalShipping, setTotalShipping] = useState(10);
 	const [totalFinished, setTotalFinished] = useState(0);
@@ -38,6 +39,15 @@ export function ProviderCheckout({ children }) {
 		setTotalShipping();
 	}
 
+	function handleLoadingCheckout({ isLoading }) {
+		if (isLoading) setLoadingCheckout(true);
+		else {
+			setTimeout(() => {
+				setLoadingCheckout(false);
+			}, 500);
+		}
+	}
+
 	return (
 		<ContextCheckout.Provider
 			value={{
@@ -47,8 +57,10 @@ export function ProviderCheckout({ children }) {
 				totalFinished,
 				mercadoPago,
 				parcelas,
+				loadingCheckout,
 				newInstallmentsCard,
 				updadeShipping,
+				handleLoadingCheckout,
 			}}
 		>
 			{children}
